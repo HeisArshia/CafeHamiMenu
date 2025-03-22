@@ -25,3 +25,57 @@ header {
   padding: 10px;
   border-bottom: 1px solid #ddd;
 }
+@media (max-width: 768px) {
+  /* Style for mobile devices */
+  .menu-item {
+    font-size: 14px;
+  }
+  .menu-item:hover {
+    background-color: #f0f0f0;
+  }
+  img {
+    width: 100%; /* تنظیم عرض به 100% */
+    height: auto; /* ارتفاع به طور خودکار تنظیم می‌شود */
+    border-radius: 10px; /* گوشه‌های تصاویر گرد */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* ایجاد سایه برای زیبایی */
+    margin: 10px 0; /* فاصله از بالا و پایین */
+  }
+
+  /* استایل برای جعبه‌های محصول */
+  .product {
+    display: flex;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #946855;
+    align-items: center;
+  }
+
+  /* استایل برای تصویر محصول */
+  .product-image {
+    flex: 1;
+    margin-right: 20px;
+  }
+
+  .product-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  /* استایل برای اطلاعات محصول */
+  .product-info {
+    flex: 2;
+  }
+
+  .product-info h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .product-info p {
+    font-size: 18px;
+    color: #fdfdfd;
+  }
+}
