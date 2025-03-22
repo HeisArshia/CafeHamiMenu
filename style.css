@@ -78,4 +78,13 @@ header {
     font-size: 18px;
     color: #fdfdfd;
   }
+  .product.sib {
+    background-color: #ccb43b;
+  }
+  .product.mojito {
+    background-color: #a6ce92;
+  }
+  .product.sibVip {
+    background-color: #d8cc1b;
+  }
 }
