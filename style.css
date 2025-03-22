@@ -48,7 +48,7 @@ header {
     border: 1px solid #ddd;
     border-radius: 10px;
     padding: 10px;
-    background-color: #946855;
+    background-color: #e6d198;
     align-items: center;
   }
 
@@ -79,12 +79,21 @@ header {
     color: #fdfdfd;
   }
   .product.sib {
-    background-color: #ccb43b;
+    background-color: #cac700;
   }
   .product.mojito {
     background-color: #a6ce92;
   }
   .product.sibVip {
-    background-color: #d8cc1b;
+    background-color: #e09f12;
+  }
+  .product.damnoosh {
+    background-color: #ccb43b;
+  }
+  .product.espreso {
+    background-color: #946855;
+  }
+  .product.teaService {
+    background-color: #4aa4e1;
   }
 }
