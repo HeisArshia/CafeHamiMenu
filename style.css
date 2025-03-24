@@ -1,99 +1,231 @@
+/* Base Styles */
+:root {
+  --primary: #6d4c41; /* Warm brown */
+  --secondary: #d7ccc8; /* Light warm gray */
+  --accent: #8d6e63; /* Medium brown */
+  --text: #5d4037; /* Dark brown */
+  --light: #efebe9; /* Very light warm gray */
+  --price-color: #a1887f; /* Light brown for prices */
+  --title-color: #795548; /* Medium brown for titles */
+}
+
 body {
-  font-family: "Arial", sans-serif;
-  text-align: center;
-  background-color: #f3e5d8;
+  font-family: "Vazir", sans-serif;
+  direction: rtl;
+  background-color: #f5f5f5; /* Light gray background */
+  color: var(--text);
+  line-height: 1.6;
 }
 
 header {
-  background-color: #8b5e3c;
+  background-color: var(--primary);
   color: white;
-  padding: 15px;
-  font-size: 24px;
+  padding: 20px 0;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .menu {
-  max-width: 400px;
-  margin: auto;
+  width: 90%;
+  max-width: 800px;
+  margin: 30px auto;
   background: white;
-  padding: 20px;
-  border-radius: 10px;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
-.item {
+/* Centered Category Titles */
+.category-title {
+  text-align: center;
+  font-size: 1.8rem;
+  color: var(--title-color);
+  margin: 40px 0 20px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.category-title:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 30%;
+  right: 30%;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--title-color),
+    transparent
+  );
+}
+
+.category-description {
+  text-align: center;
+  color: #8d6e63;
+  margin-bottom: 20px;
+}
+
+/* Text-only Items */
+.text-item {
   display: flex;
   justify-content: space-between;
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
+  padding: 15px;
+  margin: 15px auto;
+  max-width: 80%;
+  border-bottom: 1px dashed var(--secondary);
+  transition: all 0.3s ease;
+  background-color: rgba(239, 235, 233, 0.5); /* Very light warm gray */
 }
+
+.text-item:hover {
+  background-color: rgba(215, 204, 200, 0.3); /* Light warm gray */
+}
+
+.item-name {
+  font-weight: bold;
+  color: var(--title-color);
+}
+
+.item-price {
+  color: var(--price-color);
+  font-weight: bold;
+}
+
+/* Product Styles */
+.product {
+  display: flex;
+  margin-bottom: 25px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  background-color: var(--light); /* Unified light background */
+  border: 1px solid #d7ccc8; /* Light border */
+}
+
+.product:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+  flex: 1;
+  min-width: 150px;
+  max-width: 150px;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-info {
+  flex: 2;
+  padding: 15px;
+  text-align: right;
+}
+
+.product-info h3 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: var(--title-color);
+}
+
+.product-info p {
+  font-size: 1.1rem;
+  color: var(--price-color);
+  font-weight: bold;
+}
+
+/* Remove individual product background colors */
+.product.teaService,
+.product.espreso,
+.product.damnoosh,
+.product.mojito,
+.product.sib,
+.product.sibVip {
+  background-color: var(--light); /* Unified light background */
+}
+
+/* Footer Styles */
+footer {
+  background-color: var(--primary);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.contact-info {
+  text-align: right;
+  flex: 2;
+  min-width: 300px;
+}
+
+.social-links {
+  flex: 1;
+  min-width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.social-links a {
+  color: white;
+  font-size: 1.5rem;
+  transition: transform 0.3s;
+}
+
+.social-links a:hover {
+  transform: scale(1.2);
+}
+
+.copyright {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.phone-number {
+  color: #fafafa; /* رنگ قهوه‌ای متوسط هماهنگ با طرح */
+  text-decoration: none; /* حذف زیرخط */
+  margin-right: 5px;
+  font-weight: normal;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-  /* Style for mobile devices */
-  .menu-item {
-    font-size: 14px;
-  }
-  .menu-item:hover {
-    background-color: #f0f0f0;
-  }
-  img {
-    width: 100%; /* تنظیم عرض به 100% */
-    height: auto; /* ارتفاع به طور خودکار تنظیم می‌شود */
-    border-radius: 10px; /* گوشه‌های تصاویر گرد */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* ایجاد سایه برای زیبایی */
-    margin: 10px 0; /* فاصله از بالا و پایین */
-  }
-
-  /* استایل برای جعبه‌های محصول */
   .product {
-    display: flex;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 10px;
-    background-color: #e6d198;
-    align-items: center;
+    flex-direction: column;
   }
 
-  /* استایل برای تصویر محصول */
   .product-image {
-    flex: 1;
-    margin-right: 20px;
+    max-width: 100%;
+    height: 200px;
   }
 
-  .product-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
+  .text-item {
+    max-width: 95%;
   }
 
-  /* استایل برای اطلاعات محصول */
-  .product-info {
-    flex: 2;
+  .footer-content {
+    flex-direction: column;
   }
 
-  .product-info h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-
-  .product-info p {
-    font-size: 18px;
-    color: #fdfdfd;
-  }
-  .product.sib {
-    background-color: #cac700;
-  }
-  .product.mojito {
-    background-color: #a6ce92;
-  }
-  .product.sibVip {
-    background-color: #e09f12;
-  }
-  .product.damnoosh {
-    background-color: #ccb43b;
-  }
-  .product.espreso {
-    background-color: #946855;
-  }
-  .product.teaService {
-    background-color: #4aa4e1;
+  .contact-info {
+    text-align: center;
+    margin-bottom: 20px;
   }
 }
