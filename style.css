@@ -25,6 +25,42 @@ header {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+
+
+
+
+
+/* Search Bar Styles */
+.search-container {
+  position: relative;
+  margin: 20px auto;
+  max-width: 500px;
+}
+
+#searchInput {
+  width: 100%;
+  padding: 12px 45px 12px 15px;
+  border: 2px solid var(--primary);
+  border-radius: 30px;
+  font-family: "Vazir", sans-serif;
+  font-size: 1rem;
+}
+
+.search-container i {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary);
+}
+
+
+
+
+
+
+
+
 .menu {
   width: 90%;
   max-width: 800px;
