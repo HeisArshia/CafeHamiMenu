@@ -204,6 +204,43 @@
     </footer>
 
     <script>
+
+
+
+
+
+
+
+
+// ======================
+// SEARCH FUNCTIONALITY
+// ======================
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('searchInput');
+  const menuItems = document.querySelectorAll('.product, .text-item');
+  
+  searchInput.addEventListener('input', function() {
+    const searchTerm = this.value.trim().toLowerCase();
+    
+    menuItems.forEach(item => {
+      const textElement = item.querySelector('h3, .item-name'); // Check both product and text-item
+      if (!textElement) return; // Skip if no text found
+      
+      const itemName = textElement.textContent.toLowerCase();
+      item.style.display = itemName.includes(searchTerm) ? 'flex' : 'none';
+    });
+  });
+});
+
+
+
+
+
+
+
+
+
+
       document.addEventListener('DOMContentLoaded', function() {
         const mobileBtn = document.querySelector('.mobile-menu-btn');
         const navLinks = document.querySelector('.nav-links');
