@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>کافه حامی - منو دیجیتال</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -64,7 +65,7 @@
       </nav>
 
 
-      <div id="hookah" class="category">
+      <div id="hookah" class="category hidden">
         <h2 class="category-title">قلیان ها</h2>
         <p class="category-description">تمامی قیلیان ها به همراه چای رایگان</p>
         <div class="text-item">
@@ -81,7 +82,7 @@
         </div>
       </div>
 
-      <div id="hot-drinks" class="category">
+      <div id="hot-drinks" class="category hidden">
         <h2 class="category-title">نوشیدنی‌ گرم</h2>
         <div class="product teaService">
           <div class="product-info">
@@ -89,7 +90,7 @@
             <p>۴۹ تومان</p>
           </div>
           <div class="product-image">
-            <img src="images/teaService.jpg" alt="سینی چای" />
+            <img src="images/teaService.jpg" alt="سینی چای"  loading="lazy"/>
           </div>
         </div>
 
@@ -99,7 +100,7 @@
             <p>۳۹ تومان</p>
           </div>
           <div class="product-image">
-            <img src="images/esperso.jpg" alt="اسپرسو" />
+            <img src="images/esperso.jpg" alt="اسپرسو"  loading="lazy"/>
           </div>
         </div>
 
@@ -109,12 +110,12 @@
             <p>۴۴ تومان</p>
           </div>
           <div class="product-image">
-            <img src="images/damnoosh.jpg" alt="دمنوش ها" />
+            <img src="images/damnoosh.jpg" alt="دمنوش ها"  loading="lazy"/>
           </div>
         </div>
       </div>
 
-      <div id="cold-drinks" class="category">
+      <div id="cold-drinks" class="category hidden">
         <h2 class="category-title">نوشیدنی‌ سرد</h2>
         <div class="product">
           <div class="product-info">
@@ -122,7 +123,7 @@
             <p>۸۹ تومان</p>
           </div>
           <div class="product-image">
-            <img src="images/MilkShake chocolate.jpg" alt="میلک شیک شوکولات" />
+            <img src="images/MilkShake chocolate.jpg" alt="میلک شیک شوکولات"  loading="lazy"/>
           </div>
         </div>
 
@@ -132,7 +133,7 @@
             <p>۶۹ تومان</p>
           </div>
           <div class="product-image">
-            <img src="images/mojito.jpg" alt="موهیتو" />
+            <img src="images/mojito.jpg" alt="موهیتو"  loading="lazy"/>
           </div>
         </div>
 
@@ -142,7 +143,7 @@
         </div>
       </div>
 
-      <div id="food" class="category">
+      <div id="food" class="category hidden">
         <h2 class="category-title">غذا های گرم</h2>
         <div class="product sib">
           <div class="product-info">
@@ -150,7 +151,7 @@
             <p>۷۷ تومان</p>
           </div>
           <div class="product-image">
-            <img src="images/Sib.jpg" alt="سیب ساده" />
+            <img src="images/Sib.jpg" alt="سیب ساده"  loading="lazy"/>
           </div>
         </div>
 
@@ -160,7 +161,7 @@
             <p>۸۴ تومان</p>
           </div>
           <div class="product-image">
-            <img src="images/sibVip.jpg" alt="سیب ویژه" />
+            <img src="images/sibVip.jpg" alt="سیب ویژه"  loading="lazy"/>
           </div>
         </div>
       </div>
@@ -204,10 +205,19 @@
     </footer>
 
     <script>
+// ======================
+// Scroll Animation
+// ======================
+const sections = document.querySelectorAll(".hidden");
 
-
-
-
+window.addEventListener("scroll", function () {
+  sections.forEach((section) => {
+    const sectionTop = section.getBoundingClientRect().top;
+    if (sectionTop < window.innerHeight - 50) {
+      section.classList.add("show");
+    }
+  });
+});
 
 
 
